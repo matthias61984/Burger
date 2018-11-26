@@ -2,6 +2,10 @@
   <div class="row justify-content-md-center">
     <h1>Devour-A-Burger!</h1>
   </div>
+<!-- Burger Pic Div -->
+  <div class="row justify-content-md-center">
+    <img src="../public/assets/img/burgerPic.png" alt="A burger with googly eyes">
+  </div>
 <!-- Burger row -->
   <div class="row">
     <div class="offset-md-1 col-md-4">
@@ -9,7 +13,7 @@
       <ul>
         {{#each burgers}}
           {{#unless devoured}}
-            {{> cats/burgersReady devoured=true}}
+            {{> burgers/burgersReady devoured=true}}
           {{/unless}}
         {{/each}}
       </ul>
@@ -19,7 +23,7 @@
       <ul>
         {{#each burgers}}
           {{#if devoured}}
-            {{> cats/burgersEaten devoured=false}}
+            {{> burgers/burgersEaten devoured=false}}
           {{/if}}
         {{/each}}
       </ul>
