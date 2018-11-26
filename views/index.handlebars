@@ -1,38 +1,45 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers that are not devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have been devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burgerName">Burger Name:</label>
-    <input type="text" id="burgerName" name="name">
+<!-- Title Div -->
+  <div class="row justify-content-md-center">
+    <h1>Devour-A-Burger!</h1>
   </div>
-
-  <div class="form-group">
-    <label for="devoured">Already Eaten?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Ready to Eat
+<!-- Burger row -->
+  <div class="row">
+    <div class="offset-md-1 col-md-4">
+      <h2>Burgers ready for eating</h2>
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> cats/burgersReady devoured=true}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="offset-md-2 col-md-4">
+      <h2>Burgers that have been devoured</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> cats/burgersEaten devoured=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+<!-- Add A Burger Row -->
+  <div clas="row justify-content-md-center">
+    <div class="offset-md-4 col-md-4">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+        {{!-- <div class="form-group">
+          <label for="sleepy">Sleepy?</label><br>
+          <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+          <input type="radio" name="sleepy" value="0"> Awake
+        </div> --}}
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+  </div>
