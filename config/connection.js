@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
   user: "root",
   password: "root",
   database: "burgers_db"
-});
+}) || mysql.createConnection(process.env.JAWSDB_URL);
 
 // Make connection.
 connection.connect(function(err) {
