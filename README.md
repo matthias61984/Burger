@@ -2,10 +2,6 @@
 
 This browser-based application lets you create, then devour, any burger your heart desires! The app utilizes JawsDB to connect to a database through deployment on Heroku where the user can then use CRUD commands to manipulate the database. Burger objects can be added to the burgers table using the form field, which then show up in the left column, ready to be eaten. Clicking on the devour button for each created burger will change it's boolean value "devoured" from the default value false to true, moving into the right (or devoured) column. 
 
-## Getting Started
-
-To install, pull files from Github into your desired directory. Note that installing locally will require you to change the environment back to a local database, and you will have to use the schema.sql and seeds.sql files to create the database intitially.
-
 ## Deployment
 
 Deployed on heroku at https://burger-destroy.herokuapp.com/
